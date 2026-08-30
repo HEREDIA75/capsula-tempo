@@ -142,3 +142,7 @@ CORS_ALLOWED_ORIGINS = [
 
 # Caso envie cookies/sessões entre frontend e backend
 CORS_ALLOW_CREDENTIALS = True
+
+# Configuração de arquivos de mídia (Uploads)
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")

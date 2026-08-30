@@ -1,12 +1,14 @@
-from django.contrib import admin
-from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-from capsulas.views import CapsulaViewSet
+from django.urls import path
+from . import views
 
-router = DefaultRouter()
-router.register(r"capsulas", CapsulaViewSet, basename="capsula")
+# O app_name ajuda a organizar os URLs (namespaces)
+app_name = "capsula"
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("api/", include(router.urls)),
+    # Exemplo: página inicial da cápsula (http://127.0.0.1:8000/capsula/)
+    path("", views.index, name="index"),
+    # Exemplo: detalhe de uma cápsula específica pelo ID (http://127.0.0.1:8000/capsula/1/)
+    path("<int:pk>/", views.detalhe, name="detalhe"),
+    # Exemplo: criar uma nova cápsula (http://127.0.0.1:8000/capsula/criar/)
+    path("criar/", views.criar, name="criar"),
 ]

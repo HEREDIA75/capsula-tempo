@@ -6,6 +6,7 @@ class Capsula(models.Model):
     conteudo = models.TextField()
     latitude = models.FloatField()
     longitude = models.FloatField()
+    imagem = models.ImageField(upload_to="capsulas/", null=True, blank=True)
     data_criacao = models.DateTimeField(auto_now_add=True)
     data_revelacao = models.DateTimeField()
 
