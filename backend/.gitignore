@@ -1,0 +1,28 @@
+# Ambientes virtuais Python
+venv/
+.venv/
+env/
+ENV/
+
+# Python / Django
+__pycache__/
+*.py[cod]
+*$py.class
+*.sqlite3
+db.sqlite3
+*.log
+
+# Variáveis de ambiente (Segurança)
+.env
+.env.local
+
+# Node.js / React (Frontend)
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/.nx/
+
+# Logs e arquivos de sistema
+.DS_Store
+.vscode/
+.idea/
