@@ -1,7 +1,9 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 
 class Capsula(models.Model):
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name="capsulas")
     titulo = models.CharField(max_length=100)
     conteudo = models.TextField()
     latitude = models.FloatField()
@@ -11,4 +13,4 @@ class Capsula(models.Model):
     data_revelacao = models.DateTimeField()
 
     def __str__(self):
-        return self.titulo
+        return f"{self.titulo} ({self.usuario.username})"
